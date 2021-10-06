@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20190BE270DA26F009FF00B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20190BD270DA26F009FF00B /* SignUpViewController.swift */; };
+		E20190C0270DACF4009FF00B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20190BF270DACF4009FF00B /* WelcomeViewController.swift */; };
 		E2AA45EE270CB59800EFA048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA45ED270CB59800EFA048 /* AppDelegate.swift */; };
 		E2AA45F0270CB59800EFA048 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA45EF270CB59800EFA048 /* SceneDelegate.swift */; };
-		E2AA45F2270CB59800EFA048 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA45F1270CB59800EFA048 /* ViewController.swift */; };
+		E2AA45F2270CB59800EFA048 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA45F1270CB59800EFA048 /* LoginViewController.swift */; };
 		E2AA45F5270CB59800EFA048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2AA45F3270CB59800EFA048 /* Main.storyboard */; };
 		E2AA45F7270CB59A00EFA048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2AA45F6270CB59A00EFA048 /* Assets.xcassets */; };
 		E2AA45FA270CB59A00EFA048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2AA45F8270CB59A00EFA048 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E20190BD270DA26F009FF00B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E20190BF270DACF4009FF00B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E2AA45EA270CB59800EFA048 /* 29th_iOS_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 29th_iOS_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2AA45ED270CB59800EFA048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2AA45EF270CB59800EFA048 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E2AA45F1270CB59800EFA048 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2AA45F1270CB59800EFA048 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E2AA45F4270CB59800EFA048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2AA45F6270CB59A00EFA048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2AA45F9270CB59A00EFA048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +62,9 @@
 			children = (
 				E2AA45ED270CB59800EFA048 /* AppDelegate.swift */,
 				E2AA45EF270CB59800EFA048 /* SceneDelegate.swift */,
-				E2AA45F1270CB59800EFA048 /* ViewController.swift */,
+				E2AA45F1270CB59800EFA048 /* LoginViewController.swift */,
+				E20190BD270DA26F009FF00B /* SignUpViewController.swift */,
+				E20190BF270DACF4009FF00B /* WelcomeViewController.swift */,
 				E2AA45F3270CB59800EFA048 /* Main.storyboard */,
 				E2AA45F6270CB59A00EFA048 /* Assets.xcassets */,
 				E2AA45F8270CB59A00EFA048 /* LaunchScreen.storyboard */,
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2AA45F2270CB59800EFA048 /* ViewController.swift in Sources */,
+				E2AA45F2270CB59800EFA048 /* LoginViewController.swift in Sources */,
+				E20190C0270DACF4009FF00B /* WelcomeViewController.swift in Sources */,
 				E2AA45EE270CB59800EFA048 /* AppDelegate.swift in Sources */,
+				E20190BE270DA26F009FF00B /* SignUpViewController.swift in Sources */,
 				E2AA45F0270CB59800EFA048 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
