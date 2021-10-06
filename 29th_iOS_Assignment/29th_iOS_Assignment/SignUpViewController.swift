@@ -13,4 +13,9 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction private func touchUpNextButton() {
+        guard let welcomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") else { return }
+        
+        self.present(welcomeViewController, animated: true, completion: nil)
+    }
 }

@@ -12,6 +12,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction private func touchUpSignUpButton() {
+        guard let signUpViewController = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") else { return }
+        
+        self.navigationController?.pushViewController(signUpViewController, animated: true)
+    }
+    
+    @IBAction private func touchUpNextButton() {
+        guard let welcomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") else { return }
+        
+        self.present(welcomeViewController, animated: true, completion: nil)
+    }
 
 }
 
