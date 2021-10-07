@@ -8,9 +8,18 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
+    var name: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setWelcomeLabel()
+    }
+    
+    private func setWelcomeLabel() {
+        guard let name = name else { return }
+        welcomeLabel.text = "\(name)님\n환영합니다!"
     }
 
 }
