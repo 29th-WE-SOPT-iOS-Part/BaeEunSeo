@@ -18,9 +18,12 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.isEnabled = false
+        
         nameTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
         emailTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
+        
+        showPasswordButton.addTarget(self, action: #selector(touchUpShowPasswordButton), for: .touchUpInside)
     }
     
     @IBAction private func touchUpNextButton() {
@@ -43,5 +46,15 @@ class SignUpViewController: UIViewController {
             nextButton.isEnabled = true
         }
     }
-
+    
+    @objc func touchUpShowPasswordButton() {
+        if passwordTextField.isSecureTextEntry {
+            passwordTextField.isSecureTextEntry = false
+            showPasswordButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+        } else {
+            passwordTextField.isSecureTextEntry = true
+            showPasswordButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        }
+    }
+    
 }
