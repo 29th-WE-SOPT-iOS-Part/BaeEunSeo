@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.isEnabled = false
+        
         nameTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
         emailTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
