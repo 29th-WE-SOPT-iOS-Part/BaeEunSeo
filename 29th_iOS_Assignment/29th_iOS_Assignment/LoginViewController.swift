@@ -12,9 +12,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.isEnabled = false
+        nameTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
+        emailTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
     }
     
     @IBAction private func touchUpSignUpButton() {
@@ -30,6 +35,18 @@ class LoginViewController: UIViewController {
         
         self.present(welcomeViewController, animated: true, completion: nil)
     }
-
+    
+    @objc private func changeButtonState() {
+        guard let name = nameTextField.text,
+              let email = emailTextField.text,
+              let password = passwordTextField.text
+        else { return }
+        
+        if name.isEmpty || email.isEmpty || password.isEmpty {
+            nextButton.isEnabled = false
+        } else {
+            nextButton.isEnabled = true
+        }
+    }
 }
 
