@@ -14,10 +14,10 @@ class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setWelcomeLabel()
+        setupWelcomeLabel()
     }
     
-    private func setWelcomeLabel() {
+    private func setupWelcomeLabel() {
         guard let name = name else { return }
         welcomeLabel.text = "\(name)님\n환영합니다!"
     }
