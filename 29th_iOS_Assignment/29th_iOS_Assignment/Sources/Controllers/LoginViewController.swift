@@ -16,11 +16,18 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupButton()
+        setupTextField()
+    }
+    
+    private func setupButton() {
         nextButton.isEnabled = false
-        
-        nameTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
-        emailTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
+    }
+    
+    private func setupTextField() {
+        [nameTextField, emailTextField, passwordTextField].forEach {
+            $0?.delegate = self
+        }
     }
     
     @IBAction private func touchUpSignUpButton() {
@@ -36,18 +43,19 @@ class LoginViewController: UIViewController {
         
         self.present(welcomeViewController, animated: true, completion: nil)
     }
-    
-    @objc private func changeButtonState() {
-        guard let name = nameTextField.text,
-              let email = emailTextField.text,
-              let password = passwordTextField.text
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let isNameEmpty = nameTextField.text?.isEmpty,
+              let isEmailEmpty = emailTextField.text?.isEmpty,
+              let isPasswordEmpty = passwordTextField.text?.isEmpty
         else { return }
         
-        if name.isEmpty || email.isEmpty || password.isEmpty {
+        if isNameEmpty || isEmailEmpty || isPasswordEmpty {
             nextButton.isEnabled = false
         } else {
             nextButton.isEnabled = true
         }
     }
 }
-

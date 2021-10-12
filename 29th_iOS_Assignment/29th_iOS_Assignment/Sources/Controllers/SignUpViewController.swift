@@ -8,7 +8,12 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
+    
+    enum SystemImageName {
+        static let checkmark = "checkmark.square"
+        static let checkmarkFill = "checkmark.square.fill"
+    }
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -17,12 +22,18 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupButton()
+        setupTextField()
+    }
+    
+    private func setupTextField() {
+        [nameTextField, emailTextField, passwordTextField].forEach {
+            $0?.delegate = self
+        }
+    }
+    
+    private func setupButton() {
         nextButton.isEnabled = false
-        
-        nameTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
-        emailTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(changeButtonState), for: .editingChanged)
-        
         showPasswordButton.addTarget(self, action: #selector(touchUpShowPasswordButton), for: .touchUpInside)
     }
     
@@ -34,27 +45,29 @@ class SignUpViewController: UIViewController {
         self.present(welcomeViewController, animated: true, completion: nil)
     }
     
-    @objc private func changeButtonState() {
-        guard let name = nameTextField.text,
-              let email = emailTextField.text,
-              let password = passwordTextField.text
+    @objc func touchUpShowPasswordButton() {
+        passwordTextField.isSecureTextEntry == true ? setShowPasswordButtonImage(SystemImageName.checkmark) : setShowPasswordButtonImage(SystemImageName.checkmarkFill)
+        
+        passwordTextField.isSecureTextEntry.toggle()
+    }
+    
+    private func setShowPasswordButtonImage(_ imageName: String) {
+        showPasswordButton.setImage(UIImage(systemName: imageName), for: .normal)
+    }
+    
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let isNameEmpty = nameTextField.text?.isEmpty,
+              let isEmailEmpty = emailTextField.text?.isEmpty,
+              let isPasswordEmpty = passwordTextField.text?.isEmpty
         else { return }
         
-        if name.isEmpty || email.isEmpty || password.isEmpty {
+        if isNameEmpty || isEmailEmpty || isPasswordEmpty {
             nextButton.isEnabled = false
         } else {
             nextButton.isEnabled = true
         }
     }
-    
-    @objc func touchUpShowPasswordButton() {
-        if passwordTextField.isSecureTextEntry {
-            passwordTextField.isSecureTextEntry = false
-            showPasswordButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
-        } else {
-            passwordTextField.isSecureTextEntry = true
-            showPasswordButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-        }
-    }
-    
 }
