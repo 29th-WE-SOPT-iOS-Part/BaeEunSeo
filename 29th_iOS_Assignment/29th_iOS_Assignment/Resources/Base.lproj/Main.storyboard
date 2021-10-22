@@ -275,6 +275,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="확인">
                                                     <color key="baseBackgroundColor" red="0.25882352941176467" green="0.52156862745098043" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchUpDoneButton:" destination="VT3-wT-DTF" eventType="touchUpInside" id="sxd-Cg-V5D"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3z-7Q-rpk">
                                                 <rect key="frame" x="0.0" y="73" width="354" height="31"/>
@@ -282,6 +285,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="다른 계정으로 로그인하기">
                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="otherAccountLoginButtonDidTap:" destination="VT3-wT-DTF" eventType="touchUpInside" id="tBH-UJ-UkN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -298,6 +304,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmButton" destination="rVL-f9-NZi" id="swB-NA-qO0"/>
+                        <outlet property="otherAccountLoginButton" destination="L3z-7Q-rpk" id="pRT-7U-Wrs"/>
                         <outlet property="welcomeLabel" destination="EOf-nm-P2R" id="vnn-3b-1MD"/>
                     </connections>
                 </viewController>

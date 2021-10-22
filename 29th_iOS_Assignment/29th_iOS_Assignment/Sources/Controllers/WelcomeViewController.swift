@@ -10,6 +10,8 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var otherAccountLoginButton: UIButton!
     var name: String?
 
     override func viewDidLoad() {
@@ -22,4 +24,16 @@ class WelcomeViewController: UIViewController {
         welcomeLabel.text = "\(name)님\n환영합니다!"
     }
 
+    @IBAction func confirmButtonDidTap(_ sender: Any) {
+        
+    }
+    
+    @IBAction func otherAccountLoginButtonDidTap(_ sender: Any) {
+        guard let presentingViewController = self.presentingViewController as? UINavigationController
+        else { return }
+        
+        self.dismiss(animated: true) {
+            presentingViewController.popToRootViewController(animated: true)
+        }
+    }
 }
