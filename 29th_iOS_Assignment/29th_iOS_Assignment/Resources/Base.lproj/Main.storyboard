@@ -287,7 +287,7 @@
                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="otherAccountLoginButtonDidTap:" destination="VT3-wT-DTF" eventType="touchUpInside" id="tBH-UJ-UkN"/>
+                                                    <action selector="loginOtherAccountButtonDidTap:" destination="VT3-wT-DTF" eventType="touchUpInside" id="542-R0-XG4"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -306,7 +306,7 @@
                     </view>
                     <connections>
                         <outlet property="confirmButton" destination="rVL-f9-NZi" id="swB-NA-qO0"/>
-                        <outlet property="otherAccountLoginButton" destination="L3z-7Q-rpk" id="pRT-7U-Wrs"/>
+                        <outlet property="loginOtherAccountButton" destination="L3z-7Q-rpk" id="pRT-7U-Wrs"/>
                         <outlet property="welcomeLabel" destination="EOf-nm-P2R" id="vnn-3b-1MD"/>
                     </connections>
                 </viewController>

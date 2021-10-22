@@ -11,7 +11,7 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
-    @IBOutlet weak var otherAccountLoginButton: UIButton!
+    @IBOutlet weak var loginOtherAccountButton: UIButton!
     var name: String?
 
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class WelcomeViewController: UIViewController {
         self.present(mainTabBarController, animated: true, completion: nil)
     }
     
-    @IBAction private func otherAccountLoginButtonDidTap(_ sender: Any) {
+    @IBAction private func loginOtherAccountButtonDidTap(_ sender: Any) {
         guard let presentingViewController = self.presentingViewController as? UINavigationController
         else { return }
         
