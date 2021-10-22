@@ -25,7 +25,13 @@ class WelcomeViewController: UIViewController {
     }
 
     @IBAction func confirmButtonDidTap(_ sender: Any) {
+        let tabBarStoryBoard = UIStoryboard(name: "Home", bundle: nil)
+        guard let mainTabBarController = tabBarStoryBoard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController
+        else { return }
         
+        mainTabBarController.modalPresentationStyle = .fullScreen
+        
+        self.present(mainTabBarController, animated: true, completion: nil)
     }
     
     @IBAction func otherAccountLoginButtonDidTap(_ sender: Any) {

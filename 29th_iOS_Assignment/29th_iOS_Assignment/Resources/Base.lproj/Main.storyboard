@@ -276,7 +276,7 @@
                                                     <color key="baseBackgroundColor" red="0.25882352941176467" green="0.52156862745098043" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="touchUpDoneButton:" destination="VT3-wT-DTF" eventType="touchUpInside" id="sxd-Cg-V5D"/>
+                                                    <action selector="confirmButtonDidTap:" destination="VT3-wT-DTF" eventType="touchUpInside" id="Dq1-0M-mi2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3z-7Q-rpk">
