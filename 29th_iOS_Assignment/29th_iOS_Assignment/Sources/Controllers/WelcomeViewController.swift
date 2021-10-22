@@ -24,7 +24,7 @@ class WelcomeViewController: UIViewController {
         welcomeLabel.text = "\(name)님\n환영합니다!"
     }
 
-    @IBAction func confirmButtonDidTap(_ sender: Any) {
+    @IBAction private func confirmButtonDidTap(_ sender: Any) {
         let tabBarStoryBoard = UIStoryboard(name: "Home", bundle: nil)
         guard let mainTabBarController = tabBarStoryBoard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController
         else { return }
@@ -34,7 +34,7 @@ class WelcomeViewController: UIViewController {
         self.present(mainTabBarController, animated: true, completion: nil)
     }
     
-    @IBAction func otherAccountLoginButtonDidTap(_ sender: Any) {
+    @IBAction private func otherAccountLoginButtonDidTap(_ sender: Any) {
         guard let presentingViewController = self.presentingViewController as? UINavigationController
         else { return }
         

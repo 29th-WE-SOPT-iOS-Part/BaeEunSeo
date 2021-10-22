@@ -126,6 +126,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="X98-KY-dGP"/>
                     <connections>
+                        <outlet property="descriptionLabel" destination="taT-9f-xZh" id="37g-OB-Ww3"/>
                         <outlet property="emailTextField" destination="6FO-7q-W1H" id="fKv-Pa-hwG"/>
                         <outlet property="nameTextField" destination="d6d-vA-e8d" id="4Ze-qD-hE5"/>
                         <outlet property="nextButton" destination="Sbi-nc-0JX" id="fyE-5a-84s"/>

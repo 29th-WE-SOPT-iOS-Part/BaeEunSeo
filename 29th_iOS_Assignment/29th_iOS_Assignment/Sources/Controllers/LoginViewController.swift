@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -16,8 +17,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLabel()
         setupButton()
         setupTextField()
+    }
+    
+    private func setupLabel() {
+        descriptionLabel.text = "YouTube도 이동하며 계속하세요.\n앱 및 Saferi에서도 Google 서비스에 로그인됩니다."
     }
     
     private func setupButton() {
