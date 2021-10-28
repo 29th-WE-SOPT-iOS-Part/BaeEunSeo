@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -16,8 +17,18 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLabel()
         setupButton()
         setupTextField()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        clearTextField()
+    }
+    
+    private func setupLabel() {
+        descriptionLabel.text = "YouTube도 이동하며 계속하세요.\n앱 및 Saferi에서도 Google 서비스에 로그인됩니다."
     }
     
     private func setupButton() {
@@ -27,6 +38,12 @@ class LoginViewController: UIViewController {
     private func setupTextField() {
         [nameTextField, emailTextField, passwordTextField].forEach {
             $0?.delegate = self
+        }
+    }
+    
+    private func clearTextField() {
+        [nameTextField, emailTextField, passwordTextField].forEach {
+            $0?.text = ""
         }
     }
     
@@ -40,6 +57,7 @@ class LoginViewController: UIViewController {
         guard let welcomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController else { return }
         
         welcomeViewController.name = nameTextField.text
+        welcomeViewController.modalPresentationStyle = .fullScreen
         
         self.present(welcomeViewController, animated: true, completion: nil)
     }

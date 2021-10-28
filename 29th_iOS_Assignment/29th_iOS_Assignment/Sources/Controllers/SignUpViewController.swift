@@ -26,6 +26,11 @@ class SignUpViewController: UIViewController {
         setupTextField()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        clearTextField()
+    }
+    
     private func setupTextField() {
         [nameTextField, emailTextField, passwordTextField].forEach {
             $0?.delegate = self
@@ -37,10 +42,17 @@ class SignUpViewController: UIViewController {
         showPasswordButton.addTarget(self, action: #selector(touchUpShowPasswordButton), for: .touchUpInside)
     }
     
+    private func clearTextField() {
+        [nameTextField, emailTextField, passwordTextField].forEach {
+            $0?.text = ""
+        }
+    }
+    
     @IBAction private func touchUpNextButton() {
         guard let welcomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController else { return }
         
         welcomeViewController.name = nameTextField.text
+        welcomeViewController.modalPresentationStyle = .fullScreen
         
         self.present(welcomeViewController, animated: true, completion: nil)
     }
