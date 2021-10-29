@@ -8,6 +8,7 @@
 import UIKit
 
 class FeedTableViewCell: UITableViewCell {
+    static let identifier: String = "FeedTableViewCell"
 
     @IBOutlet weak var videoImageView: UIImageView!
     @IBOutlet weak var profileButton: UIButton!
@@ -21,5 +22,12 @@ class FeedTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func setData(feedData: Feed) {
+        videoImageView.image = feedData.makeVideoImage()
+        profileButton.setImage(feedData.makeProfileImage(), for: .normal)
+        titleLabel.text = feedData.title
+        descriptionLabel.text = feedData.description
     }
 }

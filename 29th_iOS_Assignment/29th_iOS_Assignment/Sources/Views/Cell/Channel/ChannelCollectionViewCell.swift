@@ -8,9 +8,17 @@
 import UIKit
 
 class ChannelCollectionViewCell: UICollectionViewCell {
+    static let identifier: String = "ChannelCollectionViewCell"
 
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
+    func setData(channelData: Channel) {
+        profileImageView.image = channelData.makeProfileImage()
+        nameLabel.text = channelData.channelName
+    }
 }

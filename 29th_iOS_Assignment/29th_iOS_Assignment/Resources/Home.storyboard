@@ -51,7 +51,8 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEF-S6-Qof">
                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="50"/>
-                                                <state key="normal" title="Button"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button" image="windowSharingIcon"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="windowSharingIcon"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4j-rG-Pme">
@@ -81,7 +82,7 @@
                                     <constraint firstAttribute="height" constant="44" id="vbl-Ud-aX2"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-K7-Cu1">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-K7-Cu1">
                                 <rect key="frame" x="0.0" y="88" width="414" height="104"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -104,8 +105,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NsH-Q4-DWv">
-                                <rect key="frame" x="0.0" y="201" width="414" height="32"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NsH-Q4-DWv">
+                                <rect key="frame" x="13" y="198" width="401" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="RUh-og-BeD"/>
@@ -134,8 +135,8 @@
                                     <constraint firstAttribute="height" constant="1" id="kb5-Os-DSN"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NdY-7h-RF2">
-                                <rect key="frame" x="0.0" y="241" width="414" height="572"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NdY-7h-RF2">
+                                <rect key="frame" x="0.0" y="235" width="414" height="578"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -146,7 +147,7 @@
                             <constraint firstItem="wSK-K7-Cu1" firstAttribute="top" secondItem="eEf-YE-Yd0" secondAttribute="bottom" id="DB4-fF-pFe"/>
                             <constraint firstItem="wQt-BN-crY" firstAttribute="bottom" secondItem="NdY-7h-RF2" secondAttribute="bottom" id="DGV-t1-e2Y"/>
                             <constraint firstItem="XMm-iV-pT3" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" id="FpI-YT-DdF"/>
-                            <constraint firstItem="NsH-Q4-DWv" firstAttribute="top" secondItem="XMm-iV-pT3" secondAttribute="bottom" constant="8" id="HMf-ce-Feh"/>
+                            <constraint firstItem="NsH-Q4-DWv" firstAttribute="top" secondItem="XMm-iV-pT3" secondAttribute="bottom" constant="5" id="HMf-ce-Feh"/>
                             <constraint firstItem="wQt-BN-crY" firstAttribute="trailing" secondItem="NdY-7h-RF2" secondAttribute="trailing" id="HOz-mT-Moi"/>
                             <constraint firstItem="wQt-BN-crY" firstAttribute="trailing" secondItem="eEf-YE-Yd0" secondAttribute="trailing" id="Jhz-7D-ewD"/>
                             <constraint firstItem="eEf-YE-Yd0" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" id="dHr-of-CID"/>
@@ -154,13 +155,18 @@
                             <constraint firstItem="wQt-BN-crY" firstAttribute="trailing" secondItem="XMm-iV-pT3" secondAttribute="trailing" id="ihK-OE-sWb"/>
                             <constraint firstItem="XMm-iV-pT3" firstAttribute="top" secondItem="wSK-K7-Cu1" secondAttribute="bottom" id="ihr-xX-daK"/>
                             <constraint firstItem="wSK-K7-Cu1" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" id="ndB-LK-xfa"/>
-                            <constraint firstItem="NdY-7h-RF2" firstAttribute="top" secondItem="NsH-Q4-DWv" secondAttribute="bottom" constant="8" id="sBm-Yv-bAM"/>
+                            <constraint firstItem="NdY-7h-RF2" firstAttribute="top" secondItem="NsH-Q4-DWv" secondAttribute="bottom" constant="5" id="sBm-Yv-bAM"/>
                             <constraint firstItem="NdY-7h-RF2" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" id="sCL-Ab-3oC"/>
-                            <constraint firstItem="NsH-Q4-DWv" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" id="tNx-DQ-fMP"/>
+                            <constraint firstItem="NsH-Q4-DWv" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" constant="13" id="tNx-DQ-fMP"/>
                             <constraint firstItem="eEf-YE-Yd0" firstAttribute="top" secondItem="wQt-BN-crY" secondAttribute="top" id="whT-KR-0MT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="homeIcon" selectedImage="homeIconFill" id="Vba-3J-0zY"/>
+                    <connections>
+                        <outlet property="categoryCollectionView" destination="NsH-Q4-DWv" id="jWF-3z-n3v"/>
+                        <outlet property="channelCollectionView" destination="wSK-K7-Cu1" id="OnO-o3-VnP"/>
+                        <outlet property="feedTableView" destination="NdY-7h-RF2" id="HhF-iP-Qyt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOk-bJ-4Ov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
