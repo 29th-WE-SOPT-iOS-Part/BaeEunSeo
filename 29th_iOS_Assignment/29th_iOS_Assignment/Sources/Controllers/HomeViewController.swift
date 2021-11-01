@@ -9,14 +9,17 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    //MARK: - @IBOutlet
     @IBOutlet weak var channelCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var feedTableView: UITableView!
     
+    //MARK: - Initialize variable
     var feedList: [Feed] = []
     var categoryList: [Category] = []
     var channelList: [Channel] = []
 
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initChannelList()
@@ -78,12 +81,14 @@ class HomeViewController: UIViewController {
     }
 }
 
+//MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
 }
 
+//MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feedList.count
@@ -102,35 +107,48 @@ extension HomeViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case channelCollectionView:
             return CGSize(width: 72, height: 104)
         case categoryCollectionView:
-            return CGSize(width: 114, height: 32)
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else { return .zero }
+            cell.setData(categoryData: Category(name: categoryList[indexPath.item].name))
+            cell.categoryButton.sizeToFit()
+            
+            guard let buttonTitle = cell.categoryButton.titleLabel else { return .zero }
+            let cellWidth = buttonTitle.frame.width + 20
+            
+            return CGSize(width: cellWidth, height: 32)
         default:
             return CGSize(width: 0, height: 0)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+        if collectionView == categoryCollectionView {
+            return UIEdgeInsets(top: 0, left: 9, bottom: 0, right: 9)
+        } else {
+            return UIEdgeInsets.zero
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == categoryCollectionView {
             return 9
         } else {
             return 0
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
 }
 
+//MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
