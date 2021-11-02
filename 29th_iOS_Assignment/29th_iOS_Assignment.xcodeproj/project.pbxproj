@@ -106,7 +106,6 @@
 			children = (
 				E2FD1E4A272BDADA00189156 /* Utils */,
 				E2FD1E40272BCB8A00189156 /* Models */,
-				E260AFE8272B1C5500F39CB2 /* Views */,
 				E23A54D727109F9500FF3E70 /* Supports */,
 				E23A54D627109F3D00FF3E70 /* Controllers */,
 			);
@@ -128,6 +127,7 @@
 		E23A54D627109F3D00FF3E70 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E22D5851272BBBA4006DC394 /* Cell */,
 				E2AA45F1270CB59800EFA048 /* LoginViewController.swift */,
 				E20190BD270DA26F009FF00B /* SignUpViewController.swift */,
 				E20190BF270DACF4009FF00B /* WelcomeViewController.swift */,
@@ -148,14 +148,6 @@
 				E2AA45EF270CB59800EFA048 /* SceneDelegate.swift */,
 			);
 			path = Supports;
-			sourceTree = "<group>";
-		};
-		E260AFE8272B1C5500F39CB2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E22D5851272BBBA4006DC394 /* Cell */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		E2AA45E1270CB59800EFA048 = {
