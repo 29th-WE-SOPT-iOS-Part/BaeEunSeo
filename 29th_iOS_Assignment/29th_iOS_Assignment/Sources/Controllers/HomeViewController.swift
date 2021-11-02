@@ -132,14 +132,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         case channelCollectionView:
             return CGSize(width: 72, height: 104)
         case categoryCollectionView:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell
-            else { return .zero }
-            cell.setData(categoryData: Category(name: categoryList[indexPath.item].name))
-            cell.categoryButton.sizeToFit()
-            
-            guard let buttonTitle = cell.categoryButton.titleLabel else { return .zero }
-            let cellWidth = buttonTitle.frame.width + 20
-            
+            let cellWidth = categoryList[indexPath.item].name.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 20
             return CGSize(width: cellWidth, height: 32)
         default:
             return CGSize(width: 0, height: 0)
