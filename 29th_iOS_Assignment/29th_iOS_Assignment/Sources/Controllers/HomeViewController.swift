@@ -160,9 +160,10 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView == categoryCollectionView {
+        switch collectionView {
+        case categoryCollectionView:
             return 9
-        } else {
+        default:
             return 0
         }
     }
