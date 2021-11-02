@@ -46,29 +46,32 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="premiumLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oSB-SZ-d88">
                                         <rect key="frame" x="16" y="12" width="96" height="20"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2FZ-qv-xfl">
-                                        <rect key="frame" x="176" y="-3" width="228" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2FZ-qv-xfl">
+                                        <rect key="frame" x="242" y="4" width="162" height="36"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEF-S6-Qof">
-                                                <rect key="frame" x="0.0" y="0.0" width="56" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEF-S6-Qof" userLabel="WindowSharingButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="36"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button" image="windowSharingIcon"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="windowSharingIcon"/>
+                                                <state key="normal" image="windowSharingIcon"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4j-rG-Pme">
-                                                <rect key="frame" x="56" y="0.0" width="56" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="notificationIcon"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4j-rG-Pme" userLabel="NotificationButton">
+                                                <rect key="frame" x="42" y="0.0" width="32" height="36"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="notificationIcon"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by3-vK-0xQ">
-                                                <rect key="frame" x="112" y="0.0" width="56" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="SearchIcon"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by3-vK-0xQ" userLabel="SearchButton">
+                                                <rect key="frame" x="84" y="0.0" width="32" height="36"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="SearchIcon"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yd-5X-sWh">
-                                                <rect key="frame" x="168" y="0.0" width="60" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="wesoptProfile"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yd-5X-sWh" userLabel="ProfileButton">
+                                                <rect key="frame" x="126" y="0.0" width="36" height="36"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" image="wesoptProfile"/>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -106,7 +109,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NsH-Q4-DWv">
-                                <rect key="frame" x="0.0" y="198" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="202" width="414" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="RUh-og-BeD"/>
@@ -136,7 +139,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NdY-7h-RF2">
-                                <rect key="frame" x="0.0" y="235" width="414" height="578"/>
+                                <rect key="frame" x="0.0" y="243" width="414" height="570"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -147,7 +150,7 @@
                             <constraint firstItem="wSK-K7-Cu1" firstAttribute="top" secondItem="eEf-YE-Yd0" secondAttribute="bottom" id="DB4-fF-pFe"/>
                             <constraint firstItem="wQt-BN-crY" firstAttribute="bottom" secondItem="NdY-7h-RF2" secondAttribute="bottom" id="DGV-t1-e2Y"/>
                             <constraint firstItem="XMm-iV-pT3" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" id="FpI-YT-DdF"/>
-                            <constraint firstItem="NsH-Q4-DWv" firstAttribute="top" secondItem="XMm-iV-pT3" secondAttribute="bottom" constant="5" id="HMf-ce-Feh"/>
+                            <constraint firstItem="NsH-Q4-DWv" firstAttribute="top" secondItem="XMm-iV-pT3" secondAttribute="bottom" constant="9" id="HMf-ce-Feh"/>
                             <constraint firstItem="wQt-BN-crY" firstAttribute="trailing" secondItem="NdY-7h-RF2" secondAttribute="trailing" id="HOz-mT-Moi"/>
                             <constraint firstItem="wQt-BN-crY" firstAttribute="trailing" secondItem="eEf-YE-Yd0" secondAttribute="trailing" id="Jhz-7D-ewD"/>
                             <constraint firstItem="eEf-YE-Yd0" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" id="dHr-of-CID"/>
@@ -155,7 +158,7 @@
                             <constraint firstItem="wQt-BN-crY" firstAttribute="trailing" secondItem="XMm-iV-pT3" secondAttribute="trailing" id="ihK-OE-sWb"/>
                             <constraint firstItem="XMm-iV-pT3" firstAttribute="top" secondItem="wSK-K7-Cu1" secondAttribute="bottom" id="ihr-xX-daK"/>
                             <constraint firstItem="wSK-K7-Cu1" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" id="ndB-LK-xfa"/>
-                            <constraint firstItem="NdY-7h-RF2" firstAttribute="top" secondItem="NsH-Q4-DWv" secondAttribute="bottom" constant="5" id="sBm-Yv-bAM"/>
+                            <constraint firstItem="NdY-7h-RF2" firstAttribute="top" secondItem="NsH-Q4-DWv" secondAttribute="bottom" constant="9" id="sBm-Yv-bAM"/>
                             <constraint firstItem="NdY-7h-RF2" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" id="sCL-Ab-3oC"/>
                             <constraint firstItem="NsH-Q4-DWv" firstAttribute="leading" secondItem="wQt-BN-crY" secondAttribute="leading" id="tNx-DQ-fMP"/>
                             <constraint firstItem="eEf-YE-Yd0" firstAttribute="top" secondItem="wQt-BN-crY" secondAttribute="top" id="whT-KR-0MT"/>
