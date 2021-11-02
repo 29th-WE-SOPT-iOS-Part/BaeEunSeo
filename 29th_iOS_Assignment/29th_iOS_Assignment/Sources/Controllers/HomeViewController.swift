@@ -15,9 +15,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var feedTableView: UITableView!
     
     //MARK: - Initialize variable
-    var feedList: [Feed] = []
-    var categoryList: [Category] = []
-    var channelList: [Channel] = []
+    private var feedList: [Feed] = []
+    private var categoryList: [Category] = []
+    private var channelList: [Channel] = []
 
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
         initCategory()
         setCollectionView()
         setTableView()
-        regiserXib()
+        registerXib()
     }
     
     private func initChannelList() {
@@ -43,11 +43,26 @@ class HomeViewController: UIViewController {
     
     private func initFeedList() {
         feedList.append(contentsOf: [
-            Feed(videoImageName: "wesoptiOSPart", profileImageName: "wesoptProfile", title: "1차 iOS 세미나 : iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면전환", description: "WE SOPT ・조회수 100만회 ・ 3주 전"),
-            Feed(videoImageName: "wesoptiOSPart", profileImageName: "wesoptProfile", title: "2차 iOS 세미나 : AutoLayout, StackView, TabBarController", description: "WE SOPT ・조회수 100만회 ・ 3주 전"),
-            Feed(videoImageName: "wesoptiOSPart", profileImageName: "wesoptProfile", title: "3차 iOS 세미나 : ScrollView, Delegate Pattern, TableView, CollectionView", description: "WE SOPT ・조회수 100만회 ・ 3주 전"),
-            Feed(videoImageName: "wesoptiOSPart", profileImageName: "wesoptProfile", title: "4차 iOS 세미나 : Cocoapods & Networking, REST API", description: "WE SOPT ・조회수 100만회 ・ 3주 전"),
-            Feed(videoImageName: "wesoptiOSPart", profileImageName: "wesoptProfile", title: "7차 iOS 세미나 : Animation과 제스쳐, 데이터 전달 심화", description: "WE SOPT ・조회수 100만회 ・ 3주 전")
+            Feed(videoImageName: "wesoptiOSPart",
+                 profileImageName: "wesoptProfile",
+                 title: "1차 iOS 세미나 : iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면전환",
+                 description: "WE SOPT ・조회수 100만회 ・ 3주 전"),
+            Feed(videoImageName: "wesoptiOSPart",
+                 profileImageName: "wesoptProfile",
+                 title: "2차 iOS 세미나 : AutoLayout, StackView, TabBarController",
+                 description: "WE SOPT ・조회수 100만회 ・ 3주 전"),
+            Feed(videoImageName: "wesoptiOSPart",
+                 profileImageName: "wesoptProfile",
+                 title: "3차 iOS 세미나 : ScrollView, Delegate Pattern, TableView, CollectionView",
+                 description: "WE SOPT ・조회수 100만회 ・ 3주 전"),
+            Feed(videoImageName: "wesoptiOSPart",
+                 profileImageName: "wesoptProfile",
+                 title: "4차 iOS 세미나 : Cocoapods & Networking, REST API",
+                 description: "WE SOPT ・조회수 100만회 ・ 3주 전"),
+            Feed(videoImageName: "wesoptiOSPart",
+                 profileImageName: "wesoptProfile",
+                 title: "7차 iOS 세미나 : Animation과 제스쳐, 데이터 전달 심화",
+                 description: "WE SOPT ・조회수 100만회 ・ 3주 전")
         ])
     }
     
@@ -74,10 +89,13 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func regiserXib() {
-        channelCollectionView.register(UINib(nibName: ChannelCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ChannelCollectionViewCell.identifier)
-        categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
-        feedTableView.register(UINib(nibName: FeedTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: FeedTableViewCell.identifier)
+    private func registerXib() {
+        channelCollectionView.register(UINib(nibName: ChannelCollectionViewCell.identifier, bundle: nil),
+                                       forCellWithReuseIdentifier: ChannelCollectionViewCell.identifier)
+        categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil),
+                                        forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        feedTableView.register(UINib(nibName: FeedTableViewCell.identifier, bundle: nil),
+                               forCellReuseIdentifier: FeedTableViewCell.identifier)
     }
 }
 
@@ -114,7 +132,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         case channelCollectionView:
             return CGSize(width: 72, height: 104)
         case categoryCollectionView:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else { return .zero }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell
+            else { return .zero }
             cell.setData(categoryData: Category(name: categoryList[indexPath.item].name))
             cell.categoryButton.sizeToFit()
             
@@ -164,13 +183,15 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case channelCollectionView:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChannelCollectionViewCell.identifier, for: indexPath) as? ChannelCollectionViewCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChannelCollectionViewCell.identifier, for: indexPath) as? ChannelCollectionViewCell
+            else { return UICollectionViewCell() }
             cell.setData(channelData: Channel(profileImageName: channelList[indexPath.item].profileImageName,
                                               channelName: channelList[indexPath.item].channelName))
             
             return cell
         case categoryCollectionView:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell
+            else { return UICollectionViewCell() }
             cell.setData(categoryData: Category(name: categoryList[indexPath.item].name))
             
             return cell
