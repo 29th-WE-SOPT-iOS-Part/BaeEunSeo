@@ -147,10 +147,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if collectionView == categoryCollectionView {
+        switch collectionView {
+        case categoryCollectionView:
             return UIEdgeInsets(top: 0, left: 9, bottom: 0, right: 9)
-        } else {
-            return UIEdgeInsets.zero
+        default:
+            return .zero
         }
     }
     
