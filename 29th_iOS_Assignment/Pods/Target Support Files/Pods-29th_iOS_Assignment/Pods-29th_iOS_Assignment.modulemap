@@ -1,0 +1,6 @@
+framework module Pods_29th_iOS_Assignment {
+  umbrella header "Pods-29th_iOS_Assignment-umbrella.h"
+
+  export *
+  module * { export * }
+}
