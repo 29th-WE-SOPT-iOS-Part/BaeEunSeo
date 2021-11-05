@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sDe-3Q-rMI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -72,6 +72,9 @@
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                 <state key="normal" image="wesoptProfile"/>
+                                                <connections>
+                                                    <action selector="accountProfileButtonDidTap:" destination="oSo-GL-W46" eventType="touchUpInside" id="Qdp-pw-e9V"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -183,6 +186,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="homeIcon" selectedImage="homeIconFill" id="Vba-3J-0zY"/>
                     <connections>
+                        <outlet property="accountProfile" destination="1Yd-5X-sWh" id="Wbq-Dn-ohF"/>
                         <outlet property="categoryCollectionView" destination="NsH-Q4-DWv" id="jWF-3z-n3v"/>
                         <outlet property="channelCollectionView" destination="wSK-K7-Cu1" id="OnO-o3-VnP"/>
                         <outlet property="feedTableView" destination="NdY-7h-RF2" id="HhF-iP-Qyt"/>

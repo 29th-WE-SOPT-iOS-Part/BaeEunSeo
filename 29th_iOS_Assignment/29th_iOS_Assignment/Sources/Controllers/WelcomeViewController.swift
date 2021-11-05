@@ -25,7 +25,7 @@ class WelcomeViewController: UIViewController {
     }
 
     @IBAction private func confirmButtonDidTap(_ sender: Any) {
-        let tabBarStoryBoard = UIStoryboard(name: "Home", bundle: nil)
+        let tabBarStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let mainTabBarController = tabBarStoryBoard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController
         else { return }
         
