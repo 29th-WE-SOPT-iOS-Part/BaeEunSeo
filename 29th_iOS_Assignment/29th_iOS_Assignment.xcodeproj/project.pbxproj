@@ -12,8 +12,13 @@
 		E20190C0270DACF4009FF00B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20190BF270DACF4009FF00B /* WelcomeViewController.swift */; };
 		E22D5856272BBBEC006DC394 /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D5854272BBBEC006DC394 /* ChannelCollectionViewCell.swift */; };
 		E22D5857272BBBEC006DC394 /* ChannelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E22D5855272BBBEC006DC394 /* ChannelCollectionViewCell.xib */; };
+		E25AB79C273526CB0012A1B2 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB79B273526CB0012A1B2 /* APIConstants.swift */; };
+		E25AB7A827356E2A0012A1B2 /* SignResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB7A727356E2A0012A1B2 /* SignResponse.swift */; };
+		E25AB7AA27356E360012A1B2 /* SignResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB7A927356E360012A1B2 /* SignResult.swift */; };
+		E25AB7AC27356F1B0012A1B2 /* UserSignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB7AB27356F1B0012A1B2 /* UserSignService.swift */; };
 		E260AFEB272B1DBA00F39CB2 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260AFE9272B1DBA00F39CB2 /* FeedTableViewCell.swift */; };
 		E260AFEC272B1DBA00F39CB2 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E260AFEA272B1DBA00F39CB2 /* FeedTableViewCell.xib */; };
+		E293F1FF27365BF500C60DC3 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293F1FE27365BF500C60DC3 /* NetworkResult.swift */; };
 		E2AA45EE270CB59800EFA048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA45ED270CB59800EFA048 /* AppDelegate.swift */; };
 		E2AA45F0270CB59800EFA048 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA45EF270CB59800EFA048 /* SceneDelegate.swift */; };
 		E2AA45F2270CB59800EFA048 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA45F1270CB59800EFA048 /* LoginViewController.swift */; };
@@ -41,8 +46,13 @@
 		E20190BF270DACF4009FF00B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E22D5854272BBBEC006DC394 /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
 		E22D5855272BBBEC006DC394 /* ChannelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCollectionViewCell.xib; sourceTree = "<group>"; };
+		E25AB79B273526CB0012A1B2 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		E25AB7A727356E2A0012A1B2 /* SignResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignResponse.swift; sourceTree = "<group>"; };
+		E25AB7A927356E360012A1B2 /* SignResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignResult.swift; sourceTree = "<group>"; };
+		E25AB7AB27356F1B0012A1B2 /* UserSignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignService.swift; sourceTree = "<group>"; };
 		E260AFE9272B1DBA00F39CB2 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		E260AFEA272B1DBA00F39CB2 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		E293F1FE27365BF500C60DC3 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		E2AA45EA270CB59800EFA048 /* 29th_iOS_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 29th_iOS_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2AA45ED270CB59800EFA048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2AA45EF270CB59800EFA048 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +182,18 @@
 			path = Supports;
 			sourceTree = "<group>";
 		};
+		E25AB79A273526A90012A1B2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E25AB79B273526CB0012A1B2 /* APIConstants.swift */,
+				E25AB7A727356E2A0012A1B2 /* SignResponse.swift */,
+				E25AB7A927356E360012A1B2 /* SignResult.swift */,
+				E25AB7AB27356F1B0012A1B2 /* UserSignService.swift */,
+				E293F1FE27365BF500C60DC3 /* NetworkResult.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		E2AA45E1270CB59800EFA048 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +227,7 @@
 				E2FD1E41272BCB9500189156 /* Feed.swift */,
 				E2FD1E43272BCBAA00189156 /* Channel.swift */,
 				E2FD1E4E272BDE0900189156 /* Category.swift */,
+				E25AB79A273526A90012A1B2 /* Network */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -345,19 +368,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2FD1E48272BD6E000189156 /* CategoryCollectionViewCell.swift in Sources */,
+				E25AB7AC27356F1B0012A1B2 /* UserSignService.swift in Sources */,
 				E2EF1DCA2722FD80004FC0A9 /* SubscriptionViewController.swift in Sources */,
 				E2FD1E44272BCBAB00189156 /* Channel.swift in Sources */,
+				E25AB7AA27356E360012A1B2 /* SignResult.swift in Sources */,
 				E260AFEB272B1DBA00F39CB2 /* FeedTableViewCell.swift in Sources */,
 				E2FD1E4F272BDE0900189156 /* Category.swift in Sources */,
 				E2AA45F2270CB59800EFA048 /* LoginViewController.swift in Sources */,
 				E2FD1E42272BCB9500189156 /* Feed.swift in Sources */,
 				E2EF1DCE2722FE8E004FC0A9 /* MainTabBarController.swift in Sources */,
 				E20190C0270DACF4009FF00B /* WelcomeViewController.swift in Sources */,
+				E25AB7A827356E2A0012A1B2 /* SignResponse.swift in Sources */,
 				E22D5856272BBBEC006DC394 /* ChannelCollectionViewCell.swift in Sources */,
+				E293F1FF27365BF500C60DC3 /* NetworkResult.swift in Sources */,
 				E2EF1DC82722FD4F004FC0A9 /* PlusViewController.swift in Sources */,
 				E2AA45EE270CB59800EFA048 /* AppDelegate.swift in Sources */,
 				E20190BE270DA26F009FF00B /* SignUpViewController.swift in Sources */,
 				E2EF1DCC2722FDE2004FC0A9 /* LibraryViewController.swift in Sources */,
+				E25AB79C273526CB0012A1B2 /* APIConstants.swift in Sources */,
 				E2AA45F0270CB59800EFA048 /* SceneDelegate.swift in Sources */,
 				E2EF1DC42722FCCA004FC0A9 /* HomeViewController.swift in Sources */,
 				E2EF1DC62722FD01004FC0A9 /* ShortsViewController.swift in Sources */,
