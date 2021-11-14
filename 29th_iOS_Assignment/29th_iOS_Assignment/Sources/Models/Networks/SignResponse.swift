@@ -9,5 +9,5 @@ struct SignResponse: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: SignResult?
+    let data: UserData?
 }

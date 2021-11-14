@@ -14,7 +14,7 @@
 		E22D5857272BBBEC006DC394 /* ChannelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E22D5855272BBBEC006DC394 /* ChannelCollectionViewCell.xib */; };
 		E25AB79C273526CB0012A1B2 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB79B273526CB0012A1B2 /* APIConstants.swift */; };
 		E25AB7A827356E2A0012A1B2 /* SignResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB7A727356E2A0012A1B2 /* SignResponse.swift */; };
-		E25AB7AA27356E360012A1B2 /* SignResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB7A927356E360012A1B2 /* SignResult.swift */; };
+		E25AB7AA27356E360012A1B2 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB7A927356E360012A1B2 /* UserData.swift */; };
 		E25AB7AC27356F1B0012A1B2 /* UserSignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB7AB27356F1B0012A1B2 /* UserSignService.swift */; };
 		E260AFEB272B1DBA00F39CB2 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260AFE9272B1DBA00F39CB2 /* FeedTableViewCell.swift */; };
 		E260AFEC272B1DBA00F39CB2 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E260AFEA272B1DBA00F39CB2 /* FeedTableViewCell.xib */; };
@@ -48,7 +48,7 @@
 		E22D5855272BBBEC006DC394 /* ChannelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCollectionViewCell.xib; sourceTree = "<group>"; };
 		E25AB79B273526CB0012A1B2 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		E25AB7A727356E2A0012A1B2 /* SignResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignResponse.swift; sourceTree = "<group>"; };
-		E25AB7A927356E360012A1B2 /* SignResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignResult.swift; sourceTree = "<group>"; };
+		E25AB7A927356E360012A1B2 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		E25AB7AB27356F1B0012A1B2 /* UserSignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignService.swift; sourceTree = "<group>"; };
 		E260AFE9272B1DBA00F39CB2 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		E260AFEA272B1DBA00F39CB2 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 		E23A54D627109F3D00FF3E70 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E2527B832741112200544A8C /* Auth */,
+				E2527B832741112200544A8C /* Account */,
 				E2527B842741113B00544A8C /* Tab */,
 				E2527B852741115000544A8C /* Home */,
 				E2527B892741119100544A8C /* Library */,
@@ -178,14 +178,14 @@
 			path = Supports;
 			sourceTree = "<group>";
 		};
-		E2527B832741112200544A8C /* Auth */ = {
+		E2527B832741112200544A8C /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				E2AA45F1270CB59800EFA048 /* LoginViewController.swift */,
 				E20190BD270DA26F009FF00B /* SignUpViewController.swift */,
 				E20190BF270DACF4009FF00B /* WelcomeViewController.swift */,
 			);
-			path = Auth;
+			path = Account;
 			sourceTree = "<group>";
 		};
 		E2527B842741113B00544A8C /* Tab */ = {
@@ -252,7 +252,7 @@
 			children = (
 				E25AB79B273526CB0012A1B2 /* APIConstants.swift */,
 				E25AB7A727356E2A0012A1B2 /* SignResponse.swift */,
-				E25AB7A927356E360012A1B2 /* SignResult.swift */,
+				E25AB7A927356E360012A1B2 /* UserData.swift */,
 				E25AB7AB27356F1B0012A1B2 /* UserSignService.swift */,
 				E293F1FE27365BF500C60DC3 /* NetworkResult.swift */,
 			);
@@ -427,7 +427,7 @@
 				E25AB7AC27356F1B0012A1B2 /* UserSignService.swift in Sources */,
 				E2EF1DCA2722FD80004FC0A9 /* SubscriptionViewController.swift in Sources */,
 				E2FD1E44272BCBAB00189156 /* Channel.swift in Sources */,
-				E25AB7AA27356E360012A1B2 /* SignResult.swift in Sources */,
+				E25AB7AA27356E360012A1B2 /* UserData.swift in Sources */,
 				E260AFEB272B1DBA00F39CB2 /* FeedTableViewCell.swift in Sources */,
 				E2FD1E4F272BDE0900189156 /* Category.swift in Sources */,
 				E2AA45F2270CB59800EFA048 /* LoginViewController.swift in Sources */,
