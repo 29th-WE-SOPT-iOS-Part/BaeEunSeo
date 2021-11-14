@@ -136,7 +136,6 @@
 		E23A54D427109F2600FF3E70 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E2FD1E4A272BDADA00189156 /* Utils */,
 				E2FD1E40272BCB8A00189156 /* Models */,
 				E23A54D727109F9500FF3E70 /* Supports */,
 				E23A54D627109F3D00FF3E70 /* Controllers */,
@@ -159,16 +158,13 @@
 		E23A54D627109F3D00FF3E70 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E22D5851272BBBA4006DC394 /* Cell */,
-				E2AA45F1270CB59800EFA048 /* LoginViewController.swift */,
-				E20190BD270DA26F009FF00B /* SignUpViewController.swift */,
-				E20190BF270DACF4009FF00B /* WelcomeViewController.swift */,
-				E2EF1DCD2722FE8E004FC0A9 /* MainTabBarController.swift */,
-				E2EF1DC32722FCCA004FC0A9 /* HomeViewController.swift */,
-				E2EF1DC52722FD01004FC0A9 /* ShortsViewController.swift */,
-				E2EF1DC72722FD4F004FC0A9 /* PlusViewController.swift */,
-				E2EF1DC92722FD80004FC0A9 /* SubscriptionViewController.swift */,
-				E2EF1DCB2722FDE2004FC0A9 /* LibraryViewController.swift */,
+				E2527B832741112200544A8C /* Auth */,
+				E2527B842741113B00544A8C /* Tab */,
+				E2527B852741115000544A8C /* Home */,
+				E2527B892741119100544A8C /* Library */,
+				E2527B882741117C00544A8C /* Subscription */,
+				E2527B872741117000544A8C /* Plus */,
+				E2527B862741116100544A8C /* Shorts */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,7 +178,76 @@
 			path = Supports;
 			sourceTree = "<group>";
 		};
-		E25AB79A273526A90012A1B2 /* Network */ = {
+		E2527B832741112200544A8C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E2AA45F1270CB59800EFA048 /* LoginViewController.swift */,
+				E20190BD270DA26F009FF00B /* SignUpViewController.swift */,
+				E20190BF270DACF4009FF00B /* WelcomeViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E2527B842741113B00544A8C /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E2EF1DCD2722FE8E004FC0A9 /* MainTabBarController.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		E2527B852741115000544A8C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E2EF1DC32722FCCA004FC0A9 /* HomeViewController.swift */,
+				E22D5851272BBBA4006DC394 /* Cell */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E2527B862741116100544A8C /* Shorts */ = {
+			isa = PBXGroup;
+			children = (
+				E2EF1DC52722FD01004FC0A9 /* ShortsViewController.swift */,
+			);
+			path = Shorts;
+			sourceTree = "<group>";
+		};
+		E2527B872741117000544A8C /* Plus */ = {
+			isa = PBXGroup;
+			children = (
+				E2EF1DC72722FD4F004FC0A9 /* PlusViewController.swift */,
+			);
+			path = Plus;
+			sourceTree = "<group>";
+		};
+		E2527B882741117C00544A8C /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				E2EF1DC92722FD80004FC0A9 /* SubscriptionViewController.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		E2527B892741119100544A8C /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				E2EF1DCB2722FDE2004FC0A9 /* LibraryViewController.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		E2527B8A2741125B00544A8C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E2FD1E41272BCB9500189156 /* Feed.swift */,
+				E2FD1E43272BCBAA00189156 /* Channel.swift */,
+				E2FD1E4E272BDE0900189156 /* Category.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E25AB79A273526A90012A1B2 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
 				E25AB79B273526CB0012A1B2 /* APIConstants.swift */,
@@ -191,7 +256,7 @@
 				E25AB7AB27356F1B0012A1B2 /* UserSignService.swift */,
 				E293F1FE27365BF500C60DC3 /* NetworkResult.swift */,
 			);
-			path = Network;
+			path = Networks;
 			sourceTree = "<group>";
 		};
 		E2AA45E1270CB59800EFA048 = {
@@ -224,10 +289,8 @@
 		E2FD1E40272BCB8A00189156 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E2FD1E41272BCB9500189156 /* Feed.swift */,
-				E2FD1E43272BCBAA00189156 /* Channel.swift */,
-				E2FD1E4E272BDE0900189156 /* Category.swift */,
-				E25AB79A273526A90012A1B2 /* Network */,
+				E2527B8A2741125B00544A8C /* Home */,
+				E25AB79A273526A90012A1B2 /* Networks */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,13 +302,6 @@
 				E2FD1E47272BD6E000189156 /* CategoryCollectionViewCell.xib */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		E2FD1E4A272BDADA00189156 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
