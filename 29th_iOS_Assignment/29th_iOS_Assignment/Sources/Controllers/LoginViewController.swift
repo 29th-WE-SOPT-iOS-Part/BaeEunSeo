@@ -83,7 +83,9 @@ extension LoginViewController {
                 self.showAlert(response.message) { _ in
                     guard let welcomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController else { return }
                     
-                    welcomeViewController.name = self.nameTextField.text
+                    UserDefaults.standard.set(response.data?.name, forKey: "name")
+                    
+                    welcomeViewController.name = UserDefaults.standard.string(forKey: "name")
                     welcomeViewController.modalPresentationStyle = .fullScreen
                     
                     self.present(welcomeViewController, animated: true, completion: nil)
