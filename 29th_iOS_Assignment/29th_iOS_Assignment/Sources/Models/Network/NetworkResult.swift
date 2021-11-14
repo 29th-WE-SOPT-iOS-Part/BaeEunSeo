@@ -10,7 +10,7 @@ import Foundation
 enum NetworkResult<T> {
     case success(T)
     case requestError(T)
+    case serverError(T)
     case pathError
-    case serverError
     case networkFail
 }

@@ -54,12 +54,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction private func touchUpNextButton() {
-        guard let welcomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController else { return }
-        
-        welcomeViewController.name = nameTextField.text
-        welcomeViewController.modalPresentationStyle = .fullScreen
-        
-        self.present(welcomeViewController, animated: true, completion: nil)
+        requestLogin()
     }
 }
 
@@ -75,5 +70,42 @@ extension LoginViewController: UITextFieldDelegate {
         } else {
             nextButton.isEnabled = true
         }
+    }
+}
+
+extension LoginViewController {
+    func requestLogin() {
+        UserSignService.shared.login(email: emailTextField.text ?? "",
+                                     password: passwordTextField.text ?? "") { responseData in
+            switch responseData {
+            case .success(let loginResponse):
+                guard let response = loginResponse as? SignResponse else { return }
+                self.showAlert(response.message) { _ in
+                    guard let welcomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController else { return }
+                    
+                    welcomeViewController.name = self.nameTextField.text
+                    welcomeViewController.modalPresentationStyle = .fullScreen
+                    
+                    self.present(welcomeViewController, animated: true, completion: nil)
+                }
+            case .requestError(let message):
+                guard let message = message as? String else { return }
+                self.showAlert(message, completion: nil)
+            case .serverError(let message):
+                guard let message = message as? String else { return }
+                self.showAlert(message, completion: nil)
+            case .pathError:
+                print("잘못된 경로입니다‼️")
+            case .networkFail:
+                print("서버와의 통신에 실패하였습니다🥲")
+            }
+        }
+    }
+    
+    private func showAlert(_ message: String, completion: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: "로그인", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: completion)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }

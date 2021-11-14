@@ -49,18 +49,12 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction private func touchUpNextButton() {
-        guard let welcomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController else { return }
-        
-        welcomeViewController.name = nameTextField.text
-        welcomeViewController.modalPresentationStyle = .fullScreen
-        
-        self.present(welcomeViewController, animated: true, completion: nil)
+        requestSignUp()
     }
     
     @objc func touchUpShowPasswordButton() {
-        passwordTextField.isSecureTextEntry == true ? setShowPasswordButtonImage(SystemImageName.checkmark) : setShowPasswordButtonImage(SystemImageName.checkmarkFill)
-        
         passwordTextField.isSecureTextEntry.toggle()
+        passwordTextField.isSecureTextEntry == true ? setShowPasswordButtonImage(SystemImageName.checkmark) : setShowPasswordButtonImage(SystemImageName.checkmarkFill)
     }
     
     private func setShowPasswordButtonImage(_ imageName: String) {
@@ -81,5 +75,43 @@ extension SignUpViewController: UITextFieldDelegate {
         } else {
             nextButton.isEnabled = true
         }
+    }
+}
+
+extension SignUpViewController {
+    func requestSignUp() {
+        UserSignService.shared.signUp(email: emailTextField.text ?? "",
+                                      name: nameTextField.text ?? "",
+                                      password: passwordTextField.text ?? "") { responseData in
+            switch responseData {
+            case .success(let signUpResponse):
+                guard let response = signUpResponse as? SignResponse else { return }
+                self.showAlert(response.message) { _ in
+                    guard let welcomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController else { return }
+                    
+                    welcomeViewController.name = self.nameTextField.text
+                    welcomeViewController.modalPresentationStyle = .fullScreen
+                    
+                    self.present(welcomeViewController, animated: true, completion: nil)
+                }
+            case .requestError(let message):
+                guard let message = message as? String else { return }
+                self.showAlert(message, completion: nil)
+            case .serverError(let message):
+                guard let message = message as? String else { return }
+                self.showAlert(message, completion: nil)
+            case .pathError:
+                print("잘못된 경로입니다‼️")
+            case .networkFail:
+                print("서버 통신 실패🥲")
+            }
+        }
+    }
+    
+    private func showAlert(_ message: String, completion: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: "회원가입", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: completion)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }

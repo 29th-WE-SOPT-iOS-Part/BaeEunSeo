@@ -5,8 +5,34 @@
 //  Created by 배은서 on 2021/11/05.
 //
 
-struct APIConstants {
+import Alamofire
+
+enum APIConstants {
     static let baseURL = "https://asia-northeast3-we-sopt-29.cloudfunctions.net/api"
-    static let signUpURL = baseURL + "/user/signup"
-    static let loginURL = baseURL + "/user/login"
+    
+    case login
+    case signUp
+    
+    var path: String {
+        switch self {
+        case .login:
+            return APIConstants.baseURL + "/user/login"
+        case .signUp:
+            return APIConstants.baseURL + "/user/signup"
+        }
+    }
+    
+    var httpMethod: HTTPMethod {
+        switch self {
+        case .login, .signUp:
+            return .post
+        }
+    }
+    
+    var header: HTTPHeaders {
+        switch self {
+        case .login, .signUp:
+            return [ "Content-Type" : "application/json" ]
+        }
+    }
 }

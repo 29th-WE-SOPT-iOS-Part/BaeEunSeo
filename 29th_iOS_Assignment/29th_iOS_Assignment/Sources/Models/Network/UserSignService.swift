@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 struct UserSignService {
     static let shared = UserSignService()
@@ -15,19 +16,16 @@ struct UserSignService {
                 name: String,
                 password: String,
                 completion: @escaping (NetworkResult<Any>) -> Void) {
-        let header: HTTPHeaders = [
-            "Content-Type" : "application/json"
-        ]
         let body: Parameters = [
             "email" : email,
             "name" : name,
             "password" : password
         ]
-        let dataRequest = AF.request(APIConstants.signUpURL,
-                                     method: .post,
+        let dataRequest = AF.request(APIConstants.signUp.path,
+                                     method: APIConstants.signUp.httpMethod,
                                      parameters: body,
                                      encoding: JSONEncoding.default,
-                                     headers: header)
+                                     headers: APIConstants.signUp.header)
         
         responseData(dataRequest, completion)
     }
@@ -35,18 +33,15 @@ struct UserSignService {
     func login(email: String,
                password: String,
                completion: @escaping (NetworkResult<Any>) -> Void) {
-        let header: HTTPHeaders = [
-            "Content-Type" : "application/json"
-        ]
         let body: Parameters = [
             "email" : email,
             "password" : password
         ]
-        let dataRequest = AF.request(APIConstants.loginURL,
-                                     method: .post,
+        let dataRequest = AF.request(APIConstants.login.path,
+                                     method: APIConstants.signUp.httpMethod,
                                      parameters: body,
                                      encoding: JSONEncoding.default,
-                                     headers: header)
+                                     headers: APIConstants.login.header)
         
         responseData(dataRequest, completion)
     }
@@ -67,18 +62,14 @@ struct UserSignService {
     }
     
     private func judgeLoginStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        guard let decodedData = try? JSONDecoder().decode(SignResponse.self, from: data)
+        else { return .pathError }
+        
         switch statusCode {
-        case 200: return isVaildLoginData(data: data)
-        case 400: return .pathError
-        case 500: return .serverError
+        case 200: return .success(decodedData)
+        case 400: return .requestError(decodedData.message)
+        case 500: return .serverError(decodedData.message)
         default: return .networkFail
         }
-    }
-    
-    private func isVaildLoginData(data: Data) -> NetworkResult<Any> {
-        let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(SignResponse.self, from: data)
-        else { return .pathError }
-        return .success(decodedData)
     }
 }
