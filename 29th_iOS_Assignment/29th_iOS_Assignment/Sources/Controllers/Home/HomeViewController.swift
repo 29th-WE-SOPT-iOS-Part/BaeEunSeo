@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var channelCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var feedTableView: UITableView!
+    @IBOutlet weak var accountProfile: UIButton!
     
     //MARK: - Initialize variable
     private var feedList: [Feed] = []
@@ -30,6 +31,7 @@ class HomeViewController: UIViewController {
         registerXib()
     }
     
+    //MARK: - Initialize Data
     private func initChannelList() {
         channelList.append(contentsOf: [
             Channel(profileImageName: "ggamju1", channelName: "iOSPart"),
@@ -77,6 +79,7 @@ class HomeViewController: UIViewController {
         ])
     }
     
+    //MARK: - Set Up
     private func setTableView() {
         feedTableView.delegate = self
         feedTableView.dataSource = self
@@ -96,6 +99,17 @@ class HomeViewController: UIViewController {
                                         forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         feedTableView.register(UINib(nibName: FeedTableViewCell.identifier, bundle: nil),
                                forCellReuseIdentifier: FeedTableViewCell.identifier)
+    }
+    
+    //MARK: - @IBAction
+    @IBAction func accountProfileButtonDidTap(_ sender: Any) {
+        let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        guard let loginNavigationController = loginStoryboard.instantiateViewController(withIdentifier: "LoginNavigationController") as? UINavigationController
+        else { return }
+        
+        loginNavigationController.modalPresentationStyle = .fullScreen
+        
+        self.present(loginNavigationController, animated: true, completion: nil)
     }
 }
 
