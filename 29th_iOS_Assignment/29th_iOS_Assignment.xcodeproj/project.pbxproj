@@ -25,6 +25,7 @@
 		E2AA45F5270CB59800EFA048 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2AA45F3270CB59800EFA048 /* Login.storyboard */; };
 		E2AA45F7270CB59A00EFA048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2AA45F6270CB59A00EFA048 /* Assets.xcassets */; };
 		E2AA45FA270CB59A00EFA048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2AA45F8270CB59A00EFA048 /* LaunchScreen.storyboard */; };
+		E2B1AC542775F1D400E9CD87 /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1AC532775F1D400E9CD87 /* FeedDetailViewController.swift */; };
 		E2EF1DC22722FC30004FC0A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2EF1DC12722FC30004FC0A9 /* Main.storyboard */; };
 		E2EF1DC42722FCCA004FC0A9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF1DC32722FCCA004FC0A9 /* HomeViewController.swift */; };
 		E2EF1DC62722FD01004FC0A9 /* ShortsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF1DC52722FD01004FC0A9 /* ShortsViewController.swift */; };
@@ -61,6 +62,7 @@
 		E2AA45F6270CB59A00EFA048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2AA45F9270CB59A00EFA048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2AA45FB270CB59A00EFA048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2B1AC532775F1D400E9CD87 /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
 		E2EF1DC12722FC30004FC0A9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E2EF1DC32722FCCA004FC0A9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E2EF1DC52722FD01004FC0A9 /* ShortsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortsViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				E2EF1DC32722FCCA004FC0A9 /* HomeViewController.swift */,
+				E2B1AC532775F1D400E9CD87 /* FeedDetailViewController.swift */,
 				E22D5851272BBBA4006DC394 /* Cell */,
 			);
 			path = Home;
@@ -427,6 +430,7 @@
 				E25AB7AC27356F1B0012A1B2 /* UserSignService.swift in Sources */,
 				E2EF1DCA2722FD80004FC0A9 /* SubscriptionViewController.swift in Sources */,
 				E2FD1E44272BCBAB00189156 /* Channel.swift in Sources */,
+				E2B1AC542775F1D400E9CD87 /* FeedDetailViewController.swift in Sources */,
 				E25AB7AA27356E360012A1B2 /* UserData.swift in Sources */,
 				E260AFEB272B1DBA00F39CB2 /* FeedTableViewCell.swift in Sources */,
 				E2FD1E4F272BDE0900189156 /* Category.swift in Sources */,

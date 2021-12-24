@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class FeedTableViewCell: UITableViewCell {
     static let identifier: String = "FeedTableViewCell"
@@ -16,12 +17,26 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var morebutton: UIButton!
     
+    var showFeedDetail: (() -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setTapGesture()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    private func setTapGesture() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapFeed))
+        videoImageView.addGestureRecognizer(tapRecognizer)
+        videoImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func tapFeed() {
+        print("taptap")
+        showFeedDetail?()
     }
     
     func setData(feedData: Feed) {

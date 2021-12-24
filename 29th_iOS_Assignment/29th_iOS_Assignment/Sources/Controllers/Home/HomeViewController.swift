@@ -135,6 +135,16 @@ extension HomeViewController: UITableViewDataSource {
                                     title: feedList[indexPath.row].title,
                                     description: feedList[indexPath.row].description))
         
+        cell.showFeedDetail = {
+            guard let feedDetailVC = self.storyboard?.instantiateViewController(withIdentifier: FeedDetailViewController.identifier) as? FeedDetailViewController
+            else { return }
+            
+            feedDetailVC.feed = self.feedList[indexPath.row]
+            feedDetailVC.modalPresentationStyle = .fullScreen
+            
+            self.present(feedDetailVC, animated: true, completion: nil)
+        }
+        
         return cell
     }
 }
