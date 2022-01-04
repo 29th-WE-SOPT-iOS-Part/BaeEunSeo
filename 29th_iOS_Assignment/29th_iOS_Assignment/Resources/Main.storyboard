@@ -196,6 +196,80 @@
             </objects>
             <point key="canvasLocation" x="-526.08695652173913" y="876.5625"/>
         </scene>
+        <!--Feed Detail View Controller-->
+        <scene sceneID="b3I-0t-FNU">
+            <objects>
+                <viewController storyboardIdentifier="FeedDetailViewController" id="T90-m1-3jH" customClass="FeedDetailViewController" customModule="_9th_iOS_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JaW-38-047">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wesoptiOSPart" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEf-4p-oX2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="212"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="uNx-pg-iBr">
+                                <rect key="frame" x="12" y="268" width="390" height="42"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="LRC-Kw-aCx">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="22"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXY-Yf-rEP">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WE-es-42g">
+                                                <rect key="frame" x="382" y="0.0" width="8" height="22"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="Vector">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIS-MS-z7S">
+                                        <rect key="frame" x="0.0" y="26" width="390" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sss-1A-fJH">
+                                <rect key="frame" x="16" y="63" width="16" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="icn_dismissBtn"/>
+                                <connections>
+                                    <action selector="touchUpDismissButton:" destination="T90-m1-3jH" eventType="touchUpInside" id="S5L-4D-Gre"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HOf-on-Udz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bEf-4p-oX2" firstAttribute="top" secondItem="HOf-on-Udz" secondAttribute="top" id="Z0c-rt-vV9"/>
+                            <constraint firstItem="bEf-4p-oX2" firstAttribute="leading" secondItem="HOf-on-Udz" secondAttribute="leading" id="cdv-Jc-RKP"/>
+                            <constraint firstItem="sss-1A-fJH" firstAttribute="top" secondItem="HOf-on-Udz" secondAttribute="top" constant="19" id="dPQ-Ci-b1P"/>
+                            <constraint firstItem="sss-1A-fJH" firstAttribute="leading" secondItem="HOf-on-Udz" secondAttribute="leading" constant="16" id="gqG-q0-zoW"/>
+                            <constraint firstItem="HOf-on-Udz" firstAttribute="trailing" secondItem="uNx-pg-iBr" secondAttribute="trailing" constant="12" id="lBT-mc-Auc"/>
+                            <constraint firstItem="uNx-pg-iBr" firstAttribute="top" secondItem="bEf-4p-oX2" secondAttribute="bottom" constant="12" id="uoa-3b-j24"/>
+                            <constraint firstItem="uNx-pg-iBr" firstAttribute="leading" secondItem="HOf-on-Udz" secondAttribute="leading" constant="12" id="wtE-HN-Ax3"/>
+                            <constraint firstItem="HOf-on-Udz" firstAttribute="trailing" secondItem="bEf-4p-oX2" secondAttribute="trailing" id="zxt-bF-i1s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="XIS-MS-z7S" id="GT0-bn-ubv"/>
+                        <outlet property="dismissButton" destination="sss-1A-fJH" id="uus-Mq-tke"/>
+                        <outlet property="titleLabel" destination="cXY-Yf-rEP" id="1S2-1h-95K"/>
+                        <outlet property="videoImageView" destination="bEf-4p-oX2" id="zIc-x6-HK0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TUb-Hj-aSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-526.08695652173913" y="1555.5803571428571"/>
+        </scene>
         <!--추가-->
         <scene sceneID="OzS-cy-PgZ">
             <objects>
@@ -265,8 +339,10 @@
         <image name="LibraryIcon" width="32.5" height="32.5"/>
         <image name="LibraryIconFill" width="32" height="32.5"/>
         <image name="SearchIcon" width="32" height="32"/>
+        <image name="Vector" width="8" height="5"/>
         <image name="homeIcon" width="32.5" height="32.5"/>
         <image name="homeIconFill" width="32.5" height="32.5"/>
+        <image name="icn_dismissBtn" width="16" height="16"/>
         <image name="notificationIcon" width="32" height="32"/>
         <image name="plusCircleIcon" width="32" height="32"/>
         <image name="premiumLogo" width="96" height="20"/>
@@ -275,6 +351,7 @@
         <image name="subscriptionsIcon" width="32.5" height="32.5"/>
         <image name="subscriptionsIconFill" width="32" height="32"/>
         <image name="wesoptProfile" width="36" height="36"/>
+        <image name="wesoptiOSPart" width="375.5" height="212"/>
         <image name="windowSharingIcon" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
